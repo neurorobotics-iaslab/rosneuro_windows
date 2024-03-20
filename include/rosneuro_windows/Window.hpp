@@ -4,6 +4,7 @@
 #include <ros/ros.h>
 #include <Eigen/Dense>
 #include <rosneuro_filters/Filter.hpp>
+#include <gtest/gtest_prod.h>
 
 namespace rosneuro {
 
@@ -19,6 +20,8 @@ class Window : public Filter<T> {
 	protected:
 		bool is_window_set_;
 		T wnorm_;
+
+        FRIEND_TEST(WindowTestSuite, Constructor);
 };
 
 template<typename T>
